@@ -20,6 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'goHome']);
+Route::get('/parceiros', [PartnersController::class, 'goPartners']);
+
+/*Route::get('/parceiros', function () {
+    return view('site.parceiros');
+});*/
 
 Route::get('/jumbo', function () {
     return view('site.jumbo');
