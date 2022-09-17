@@ -1,7 +1,7 @@
-@include('parts.cabecalho')
+@include('parts.header')
 
     @yield('menu')
 
     @yield('content')
 
-@include('parts.rodape')
+@include('parts.footer')

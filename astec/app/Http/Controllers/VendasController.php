@@ -8,7 +8,7 @@ class VendasController extends Controller
 {
     public function relatorio($mes, $ano) {
         echo "mes: $mes - ano: $ano<br>";
-        return view('site.apresentacao', ['mes' => $mes, 'ano' => $ano]);
+        return view('site.vendas', ['mes' => $mes, 'ano' => $ano]);
     }
 
     public function produtos() {

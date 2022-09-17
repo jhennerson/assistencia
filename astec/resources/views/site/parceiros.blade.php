@@ -1,5 +1,5 @@
 @extends('common.mdb-fullpage')
 
 @section('content')
-    @include('parts.comments')
+    @include('components.fabricantes')
 @endsection

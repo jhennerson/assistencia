@@ -6,4 +6,5 @@
 
 @section('content')
     @include('parts.contact-form')
+    @include('parts.map')
 @endsection

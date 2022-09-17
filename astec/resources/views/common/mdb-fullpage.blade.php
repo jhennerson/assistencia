@@ -1,5 +1,5 @@
-@include('parts.cabecalho')
+@include('parts.header')
 
     @yield('content')
 
-@include('parts.rodape')
+@include('parts.footer')
