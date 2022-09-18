@@ -37,7 +37,7 @@
         ])
         @include('includes.card', [
             'image' => 'assets/image/card/plotter.jpg',
-            'title' => 'Segmento de projetos',
+            'title' => 'Projetos sofisticados',
             'text' => 'Equipamentos de plotagem para o mercado de projetos',
         ])
     @endcomponent

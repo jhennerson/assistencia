@@ -1,10 +1,12 @@
-<div class="card collection-card" style="width: 20rem;">
-    <div class="view zoom">
-        <img class="img-fluid" src="{{ asset($image) }}" alt="Example photo">
-        <div class="{{ $color }}">
-            <a>
-                <p>{{ $title }} <i class="fas fa-chevron-right"></i></p>
-            </a>
+<div class="col-sm mb-4">
+    <div class="card h-100 overlay zoom">
+        <img src="{{ asset($image) }}" class="card-img-top p-2" alt="Skyscrapers" />
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title cyan-text h4">{{ $title ?? 'Produto' }}</h5>
+            <p class="card-text">
+                {{ $text ?? 'Descrição' }}
+            </p>
+            <a href="#" class="btn btn-lg btn-block btn-primary mt-auto #ffc400 amber accent-3 accent-4">Solicitar orçamento</a>
         </div>
     </div>
 </div>

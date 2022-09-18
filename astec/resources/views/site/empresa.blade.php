@@ -7,21 +7,21 @@
 @section('content')
     @include('parts.heading', ['title' => 'Empresa'])
 
-    @include('parts.blog-post', [
+    @include('parts.post', [
         'color' => 'light-blue-text',
         'image' => 'assets/image/about/missao.webp',
         'title' => 'Missão',
         'text' =>
             'Satisfazer as necessidades de nossos clientes, oferecendo soluções completas que desenvolvam continuamente o seu alto grau de satisfação e respeitando o meio ambiente com responsabilidade social corporativa.',
     ])
-    @include('parts.blog-post', [
+    @include('parts.post', [
         'color' => 'green-text',
         'image' => 'assets/image/about/visao.webp',
         'title' => 'Visão',
         'text' =>
             'Ser uma empresa atuante, que opere com foco no cliente e com o máximo de qualidade, eficiência e confiabilidade, mantendo sempre a ética, o respeito ao meio ambiente e a constância de propósitos',
     ])
-    @include('parts.blog-post', [
+    @include('parts.post', [
         'color' => 'lime-text',
         'image' => 'assets/image/about/valores.webp',
         'title' => 'Valores',

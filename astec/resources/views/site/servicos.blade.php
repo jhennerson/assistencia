@@ -26,7 +26,7 @@
 
         @include('includes.services-card', [
             'image' => 'assets/image/services/products.jpg',
-            'title' => 'Manutenção e Reparo',
+            'title' => 'Loja',
             'sub' => 'Portfólio vasto e um preço sem igual',
             'text' =>
                 'Temos os equipamentos mais atualizados do mercado dispóniveis para você. Trabalhamos com suprimentos, multifonfionais, impressoras, scanners, plotters, dispositivos de corte e muito mais.',
