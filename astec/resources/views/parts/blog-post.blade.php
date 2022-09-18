@@ -1,5 +1,5 @@
-<div class="container mb-4">
-    <div class="row mt-3 border border-top-0">
+<div class="container my-3 py-3 z-depth-1">
+    <div class="row mt-3">
         <div class="col-lg-5 mb-5">
             <div class="view overlay ">
                 <img src=" {{ asset($image) }}" class="img-fluid rounded-circle" alt="Second sample image">

@@ -8,9 +8,7 @@
         </tr>
     </thead>
     <tbody>
-
         {{ $color = '' }}
-
         @for ($i = 1; $i < 10; $i++)
             <tr class="table table-striped">
                 <th scope="row">{{ $i }}</th>
@@ -19,6 +17,5 @@
                 <td>@mdo</td>
             </tr>
         @endfor
-
     </tbody>
 </table>
