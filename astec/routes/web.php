@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VendasController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,7 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'goHome']);
 Route::get('/parceiros', [PartnersController::class, 'goPartners']);
-
-/*Route::get('/parceiros', function () {
-    return view('site.parceiros');
-});*/
+Route::get('/empresa', [CompanyController::class, 'goCompany']);
 
 Route::get('/jumbo', function () {
     return view('site.jumbo');

@@ -18,7 +18,7 @@
         ])
     @endcomponent
 
-    @component('components.bloco-frame', ['columns' => '3'])
+    @component('components.block-frame', ['columns' => '3'])
         @include('includes.card', [
             'image' => 'assets/image/card/card_reader.jpg',
             'title' => 'Impressão segura',
@@ -36,7 +36,7 @@
         ])
     @endcomponent
 
-    @component('components.bloco-frame', ['columns' => '4'])
+    @component('components.block-frame', ['columns' => '4'])
         @include('includes.fabricante', ['image' => 'assets/image/partners/canon.jpg'])
         @include('includes.fabricante', ['image' => 'assets/image/partners/brother.jpg'])
         @include('includes.fabricante', ['image' => 'assets/image/partners/kyocera.jpg'])

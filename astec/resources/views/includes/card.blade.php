@@ -1,5 +1,5 @@
 <div class="col-sm">
-    <div class="card h-100">
+    <div class="card h-100 overlay zoom">
         <img src="{{ asset($image) }}" class="card-img-top" alt="Skyscrapers" />
         <div class="card-body">
             <h5 class="card-title red-text h4">{{ $title ?? 'Produto' }}</h5>
