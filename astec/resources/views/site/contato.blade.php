@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
-    @include('parts.contact-form')
-    @include('parts.map')
+    @include('parts.heading', ['color' => 'peach-gradient', 'title' => 'Contato'])
+    @component('components.contact-frame')
+    @endcomponent
+
+    @include('parts.heading', ['color' => 'peach-gradient'])
 @endsection

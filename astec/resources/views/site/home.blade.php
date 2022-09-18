@@ -7,6 +7,12 @@
 @section('content')
     @component('components.carousel')
         @include('includes.carousel-item', [
+            'active' => 'active',
+            'image' => 'assets/image/carousel/task.jpg',
+            'title' => 'Equipamentos robustos',
+            'text' => 'Equipamentos completos para atender a demanda do mercado',
+        ])
+        @include('includes.carousel-item', [
             'image' => 'assets/image/carousel/documents.jpg',
             'title' => 'Gerenciamento de documentos',
             'text' => 'Facilite o seu trabalho com nossas soluções em documentos digitais',

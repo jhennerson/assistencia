@@ -13,16 +13,19 @@
                             <a href="#!">Compliance</a>
                         </li>
                         <li>
-                            <a href="#!">Termos de Serviço</a>
+                            <a href="#!">Termos de serviço</a>
                         </li>
                         <li>
-                            <a href="#!">Política de Privacidade</a>
+                            <a href="#!">Política de privacidade</a>
                         </li>
                         <li>
                             <a href="#!">Parceiros</a>
                         </li>
                         <li>
-                            <a href="#!">Trabalhe Conosco</a>
+                            <a href="#!">Trabalhe conosco</a>
+                        </li>
+                        <li>
+                            <a href="#!">Dê sua opinião</a>
                         </li>
                     </ul>
 
@@ -32,11 +35,13 @@
 
                 <div class="col-md-6 mb-md-0 mb-3">
 
-                    <h5 class="text-uppercase font-weight-bold">Endereço</h5>
-                    <p><i class="fas fa-map-marker-alt"></i>    Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000 </p>
-
                     <h5 class="text-uppercase font-weight-bold">Contato</h5>
-                    <p><i class="fas fa-phone-alt"></i>    55 (11) 2304-4250 </p>
+                    <p><i class="fas fa-phone-alt"></i> 55 (11) 1234-5678 </p>
+                    <p><i class="fab fa-whatsapp"></i> 55 (11) 98765-4321 </p>
+
+                    <h5 class="text-uppercase font-weight-bold">Endereço</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Salgado Filho, 3501 - Centro, Guarulhos - SP, 07115-000
+                    </p>
 
                 </div>
 
