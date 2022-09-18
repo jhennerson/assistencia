@@ -6,6 +6,7 @@ use App\Http\Controllers\VendasController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\customersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/parceiros', [PartnersController::class, 'goPartners']);
 Route::get('/empresa', [CompanyController::class, 'goCompany']);
 Route::get('/servicos', [ServicesController::class, 'goServices']);
 Route::get('/contato', [ContactController::class, 'goContact']);
+Route::get('/clientes', [customersController::class, 'goCustomers']);
 
 
 Route::get('/login/{dia}/{mes}/{ano}', function ($dia, $mes, $ano) {
