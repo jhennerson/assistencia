@@ -30,6 +30,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contato">Contato</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="entrar">Entrar</a>
+                </li>
             </ul>
         </div>
     </div>
