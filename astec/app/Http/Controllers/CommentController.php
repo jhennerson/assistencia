@@ -12,6 +12,12 @@ class CommentController extends Controller
 
         $author = Comment::where('id', $comment->user_id)->first()->toArray();
 
-        return view('comment.show', [''])
+        return view('comment.show', ['']);
+    }
+
+    public function commentList() {
+        $comments = Comment::all();
+
+        return view('site.clientes',['comments' => $comments]);
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,9 @@ Route::get('/empresa', [CompanyController::class, 'goCompany']);
 Route::get('/servicos', [ServicesController::class, 'goServices']);
 Route::get('/contato', [ContactController::class, 'goContact']);
 Route::get('/clientes', [CustomersController::class, 'goCustomers']);
-Route::get('/loja', [ShopController::class, 'goShop']);
+Route::get('/loja', [ProductController::class, 'cardList']);
 Route::get('/entrar', [SignInController::class, 'goSignIn']);
-Route::any('/cadastro', [UserController::class, 'register']);
+Route::any('/cadastro', [UserController::class, 'store']);
+Route::any('/cadastro-produto', [ProductController::class, 'store']);
 Route::get('/usuarios', [UserController::class, 'list']);
+Route::get('/produtos', [ProductController::class, 'list']);

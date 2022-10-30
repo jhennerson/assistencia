@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->integer('cpf')->unique();
-            $table->integer('phone')->unique();
+            $table->bigInteger('cpf')->unique();
+            $table->bigInteger('phone')->unique();
             //$table->string('password');
             //$table->rememberToken();
             $table->timestamps();

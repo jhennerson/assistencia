@@ -43,11 +43,11 @@
     @endcomponent
 
     @component('components.block-frame', ['columns' => '4'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/canon.jpg'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/brother.jpg'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/kyocera.jpg'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/epson.jpg'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/oki.jpg'])
-        @include('includes.fabricante', ['image' => 'assets/image/partners/konica.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/canon.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/brother.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/kyocera.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/epson.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/oki.jpg'])
+        @include('includes.manufacturer', ['image' => 'assets/image/partners/konica.jpg'])
     @endcomponent
 @endsection

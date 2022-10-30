@@ -7,19 +7,18 @@ use App\Models\UserModel;
 
 class UserController extends Controller
 {
-    public function register() {
+    public function store() {
         $user = new UserModel();
-        $user->store();
+        $user->register();
 
         return view('site.cadastro');
-        //return redirect('/entrar');
     }
 
     public function list() {
-        $header = ['first_name', 'last_name', 'email', 'cpf', 'phone'];
+        $header = ['NOME', 'SOBRENOME', 'EMAIL', 'CPF', 'TELEFONE'];
         $um = new UserModel();        
 
-        $body = $um->list();
+        $body = $um->listAll();
 
         $table = new Table($header, $body->toArray());
 

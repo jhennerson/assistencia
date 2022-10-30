@@ -16,7 +16,7 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->bothify('???-####'),
+            'name' => fake()->regexify('[A-Z]{3}-[0-9]{4}'),
             'manufacturer' => fake()->randomElement(['Brother', 'Canon', 'Epson', 'Kyocera', 'Konica Minolta', 'Okidata']),
             'description' => fake()->sentence()
         ];
