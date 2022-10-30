@@ -31,7 +31,7 @@
     @component('components.block-frame', ['columns' => '4'])        
         @foreach ($products as $product)
             @include('includes.product-card', [
-                'image' => $product->id,
+                'image' => $product->image,
                 'name' =>  $product->name,
                 'manufacturer' =>  $product->manufacturer,
                 'description' =>  $product->description

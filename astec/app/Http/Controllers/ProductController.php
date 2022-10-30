@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function store() {
+    public function store(Request $request) {
         $product = new ProductModel();
         $product->register();
 

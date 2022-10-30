@@ -18,7 +18,8 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->regexify('[A-Z]{3}-[0-9]{4}'),
             'manufacturer' => fake()->randomElement(['Brother', 'Canon', 'Epson', 'Kyocera', 'Konica Minolta', 'Okidata']),
-            'description' => fake()->sentence()
+            'description' => fake()->sentence(),
+            'image' => '8c6e0dca58b658e3a9ce4280ee76a604.png'
         ];
     }
 }
