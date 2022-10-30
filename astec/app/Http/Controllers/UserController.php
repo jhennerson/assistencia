@@ -17,12 +17,11 @@ class UserController extends Controller
 
     public function list() {
         $header = ['first_name', 'last_name', 'email', 'cpf', 'phone'];
-        $body = [];
+        $um = new UserModel();        
 
-        $table = new Table($header, $body);
+        $body = $um->list();
 
-        $this->header = $header;
-        $this->body = $body;
+        $table = new Table($header, $body->toArray());
 
         return view('site.usuarios', ['table' => $table->getHTML()]);
     }

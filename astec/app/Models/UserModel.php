@@ -23,4 +23,9 @@ class UserModel extends Model
 
         User::create($result);
     }
+
+    public function list() {
+        $user = new User();
+        return $user->select('first_name', 'last_name', 'email', 'cpf', 'phone')->get();
+    }
 }
