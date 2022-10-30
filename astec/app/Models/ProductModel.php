@@ -9,9 +9,16 @@ class ProductModel extends Model
     public function register() {
         if(sizeof($_POST) == 0) return;
 
-        $data = request();                
+        $data = request();
 
-        /*if($data->hasFile('image') && $data->file('image')->isValid()) {
+        $result = $data->validate([
+            'name' => 'required|string|min:1|max:32',
+            'manufacturer' => 'required|string|min:1|max:64',
+            'description' => 'required|min:1|max:255',
+            'image' => 'file|mimes:jpg,bmp,png',
+        ]);
+
+        if($data->hasFile('image')) {
             $requestImage = $data->image;
 
             $extension = $requestImage->extension();
@@ -20,14 +27,8 @@ class ProductModel extends Model
 
             $requestImage->move(public_path('img/products'), $imageName);
 
-            $data->image = $imageName;
-        }*/
-
-        $result = $data->validate([
-            'name' => 'required|string|min:1|max:32',
-            'manufacturer' => 'required|string|min:1|max:64',
-            'description' => 'required|min:1|max:255'
-        ]);
+            $result['image'] = $imageName;
+        }
 
         Product::create($result);
     }
