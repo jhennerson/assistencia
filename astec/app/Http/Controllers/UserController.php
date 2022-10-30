@@ -9,6 +9,9 @@ class UserController extends Controller
 {
     public function register() {
         $user = new UserModel();
-        $user->userRegister();
+        $user->store();
+
+        return view('site.cadastro');
+        //return redirect('/entrar');
     }
 }

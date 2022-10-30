@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('cpf')->unique();
             $table->integer('phone')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            //$table->string('password');
+            //$table->rememberToken();
             $table->timestamps();
         });
     }

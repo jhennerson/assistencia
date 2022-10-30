@@ -1,44 +1,41 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form class="text-center border border-light p-5 bg-white" action="#!">
+            <form class="text-center border border-light p-5 bg-white" id="contact-form" name="contact-form" method="POST" action="/cadastro">
                 @csrf
                 <p class="h4 mb-4">Cadastrar</p>
 
-                <div class="form-row mb-4">
-                    <div class="col">
-                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" value="{{ old('first_name') }}" name="first_name" placeholder="Nome">
-                    </div>
-                    @error('first_name')
-                        <p class='red-text'>{{ $message }}</p>
-                    @enderror
-                    <div class="col">
-                        <input type="text" id="defaultRegisterFormLastName" class="form-control" value="{{ old('last_name') }}" name="last_name" placeholder="Sobrenome">
-                    </div>
-                    @error('last_name')
-                        <p class='red-text'>{{ $message }}</p>
-                    @enderror
-                </div>
-
                 <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') }}" name="email" placeholder="E-mail">
-                    @error('email')
-                        <p class='red-text'>{{ $message }}</p>
-                    @enderror
+                @error('email')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror
 
-                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" name="password" placeholder="Senha" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                    @error('password')
-                        <p class='red-text'>{{ $message }}</p>
-                    @enderror
+                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Senha (mín. 8 caracteres)" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                @error('password')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror
 
-                <input type="password" id="defaultRegisterFormPasswordConfirmation" class="form-control" name="password2"  placeholder="Confirmar" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-2">
-                    Pelo menos 8 caracteres
-                </small>
-                    @error('password2')
-                        <p class='red-text'>{{ $message }}</p>
-                    @enderror
+                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Confirmar senha" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                @error('password')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror
+                    
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') }}" name="first_name" placeholder="Nome">
+                @error('first_name')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror
+                    
+                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') }}" name="last_name" placeholder="Sobrenome">   
+                @error('last_name')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror
 
-                <input type="text" id="defaultRegisterPhonePassword" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="number" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') }}" name="cpf" placeholder="CPF">
+                @error('cpf')
+                    <p class='red-text'>{{ $message }}</p>
+                @enderror                
+
+                <input type="number" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                     @error('phone')
                         <p class='red-text'>{{ $message }}</p>
                     @enderror
@@ -46,7 +43,9 @@
                     Opcional
                 </small>
 
-                <button class="btn btn-info my-4 btn-block" type="submit">Cadastrar</button>
+                <div class="text-center text-md-center">
+                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Cadastrar</a>
+                </div>
 
                 <hr>
 
