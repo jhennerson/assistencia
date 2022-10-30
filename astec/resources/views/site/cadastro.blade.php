@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @component('components.login-frame')
+    @component('components.form-frame')
         @slot('form')
             @include('parts.user-form')
         @endslot

@@ -34,3 +34,4 @@ Route::get('/clientes', [CustomersController::class, 'goCustomers']);
 Route::get('/loja', [ShopController::class, 'goShop']);
 Route::get('/entrar', [SignInController::class, 'goSignIn']);
 Route::any('/cadastro', [UserController::class, 'register']);
+Route::get('/usuarios', [UserController::class, 'list']);

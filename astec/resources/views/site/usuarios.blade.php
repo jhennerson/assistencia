@@ -6,9 +6,9 @@
 
 @section('content')
 
-    @component('components.form-frame')
-        @slot('form')
-            @include('parts.login-form')
+    @component('components.list-frame')
+        @slot('table')
+            @include('parts.user-list')
         @endslot
     @endcomponent
 

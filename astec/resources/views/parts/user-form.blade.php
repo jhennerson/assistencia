@@ -30,12 +30,12 @@
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="number" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') }}" name="cpf" placeholder="CPF">
+                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') }}" name="cpf" placeholder="CPF">
                 @error('cpf')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror                
 
-                <input type="number" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                     @error('phone')
                         <p class='red-text'>{{ $message }}</p>
                     @enderror
