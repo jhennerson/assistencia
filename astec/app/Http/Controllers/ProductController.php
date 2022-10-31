@@ -26,6 +26,12 @@ class ProductController extends Controller
         return view('site.produtos', ['table' => $table->getHTML()]);
     }
 
+    public function cardList() {
+        $products = Product::all();
+
+        return view('site.loja',['products' => $products]);
+    }
+
     public function destroy($id) {
         Product::findOrFail($id)->delete();
         
