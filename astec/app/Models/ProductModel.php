@@ -35,6 +35,6 @@ class ProductModel extends Model
     
     public function listAll() {
         $product = new Product();
-        return $product->select('name', 'manufacturer', 'description', 'image')->get();
+        return $product->select('name', 'manufacturer', 'description')->get();
     }
 }

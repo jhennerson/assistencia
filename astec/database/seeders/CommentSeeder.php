@@ -1,12 +1,12 @@
 <?php
 
 namespace Database\Seeders;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Helpers\DataBuilders\ProductDataBuilder;
-use App\Models\Product;
+use App\Models\Comment;
 
-class ProductSeeder extends Seeder
+class CommentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder
      * @return void
      */
     public function run()
-    {       
-        Product::factory(23)->create();            
+    {
+        Comment::factory(44)->create();
     }
 }

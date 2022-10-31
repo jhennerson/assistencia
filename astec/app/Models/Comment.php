@@ -10,7 +10,7 @@ class Comment extends Model
 
     protected $fillable = [
         'author',
-        'content'
+        'content',
     ];
 
     public function comment() {

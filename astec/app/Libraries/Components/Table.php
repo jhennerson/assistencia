@@ -27,7 +27,7 @@ use App\Models\UserModel;
     private function tableHeader() {
         $html = '<thead><tr>';             
         foreach ($this->header as $item) {
-            $html .= "<th scope=\"col\">$item</th>";
+            $html .= '<th scope=\"col\">'.$item.'</th>';
         }        
         $html .= '</tr></thead>';
         return $html;
@@ -45,9 +45,20 @@ use App\Models\UserModel;
     private function tableRow($row) {
         $html = '<tr>';
         foreach ($row as $item) {
-            $html .= "<td>$item</td>";
+            $html .= '<td class="align-middle">'.$item.'</td>';
         }
-        $html .= '</tr>';
+        $html .=
+            '<td class="align-middle">
+                <a href="{{ }}" class="btn btn-info edit-btn">Editar</a>
+            </td>
+            <td class="align-middle">
+                <form class="delete_form" action="{{ }}" method="POST">
+                    <input type="hidden" name="_token" value="'.csrf_token().'" /> 
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger delete-btn" name="trash-outline">Remover</button>
+                </form>
+            </td>';
+        $html .= '</tr>';        
         return $html;
     }
  }

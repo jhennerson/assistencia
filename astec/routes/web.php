@@ -35,6 +35,8 @@ Route::get('/clientes', [CustomersController::class, 'goCustomers']);
 Route::get('/loja', [ProductController::class, 'cardList']);
 Route::get('/entrar', [SignInController::class, 'goSignIn']);
 Route::any('/cadastro', [UserController::class, 'store']);
+Route::any('/cadastro/{id}', [UserController::class, 'destroy']);
 Route::any('/cadastro-produto', [ProductController::class, 'store']);
+Route::any('/cadastro-produto/{id}', [ProductController::class, 'destroy']);
 Route::get('/usuarios', [UserController::class, 'list']);
 Route::get('/produtos', [ProductController::class, 'list']);

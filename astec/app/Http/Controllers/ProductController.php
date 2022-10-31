@@ -17,11 +17,12 @@ class ProductController extends Controller
 
     public function list() {
         $header = ['NOME', 'FABRICANTE', 'DESCRIÇÃO'];
-        $pm = new ProductModel();        
+        $pm = new ProductModel();
+        $route = 'cadastro-produto';        
 
         $body = $pm->listAll();
 
-        $table = new Table($header, $body->toArray());
+        $table = new Table($header, $body->toArray(), $route);
 
         return view('site.produtos', ['table' => $table->getHTML()]);
     }
@@ -30,5 +31,11 @@ class ProductController extends Controller
         $products = Product::all();
 
         return view('site.loja',['products' => $products]);
+    }
+
+    public function destroy($id) {
+        Product::findOrFail($id)->delete();
+        
+        return view('site.cadastro-produto')->with('msg', 'Produto removido com sucesso!');
     }
 }

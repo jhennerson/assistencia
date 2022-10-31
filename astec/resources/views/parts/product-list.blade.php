@@ -1,3 +1,3 @@
 <table class="table">
-    {!! $table !!}
+    {!! $table !!}    
 </table>
