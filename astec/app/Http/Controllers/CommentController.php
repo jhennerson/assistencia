@@ -1,23 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Libraries\Components\Table;
+use App\Models\CommentModel;
 use App\Models\Comment;
 
 class CommentController extends Controller
 {
-    public function show($id) {
-        $comment = Comment::findOrFail($id);
+    public function list() {
+        $header = ['AUTOR', 'CONTEÚDO'];
+        $pm = new CommentModel();
 
-        $author = Comment::where('id', $comment->user_id)->first()->toArray();
+        $body = $pm->listAll();
 
-        return view('comment.show', ['']);
+        $table = new Table($header, $body->toArray());
+
+        return view('site.comentarios', ['table' => $table->getHTML()]);
     }
 
-    public function commentList() {
-        $comments = Comment::all();
-
-        return view('site.clientes',['comments' => $comments]);
+    public function destroy($id) {
+        Comment::findOrFail($id)->delete();
+        
+        return view('site.comentarios')->with('msg', 'Comentário removido com sucesso!');
     }
 }

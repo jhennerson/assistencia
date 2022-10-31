@@ -18,11 +18,10 @@ class UserController extends Controller
     public function list() {
         $header = ['NOME', 'SOBRENOME', 'EMAIL', 'CPF', 'TELEFONE'];
         $um = new UserModel();
-        $route = '/cadastro/';
 
         $body = $um->listAll();
 
-        $table = new Table($header, $body->toArray(), $route);
+        $table = new Table($header, $body->toArray());
 
         return view('site.usuarios', ['table' => $table->getHTML()]);
     }

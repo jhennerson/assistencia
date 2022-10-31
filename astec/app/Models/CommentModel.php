@@ -13,7 +13,7 @@ class CommentModel extends Model
 
         $result = $data->validate([
             'author' => 'required|string|min:2|max:50',
-            'description' => 'required|min:1|max:255'
+            'content' => 'required|min:1|max:255'
         ]);
 
         Comment::create($result);
@@ -21,6 +21,6 @@ class CommentModel extends Model
     
     public function listAll() {
         $product = new Comment();
-        return $product->select('name', 'manufacturer', 'description')->get();
+        return $product->select('author', 'content')->get();
     }
 }

@@ -17,20 +17,13 @@ class ProductController extends Controller
 
     public function list() {
         $header = ['NOME', 'FABRICANTE', 'DESCRIÇÃO'];
-        $pm = new ProductModel();
-        $route = 'cadastro-produto';        
+        $pm = new ProductModel();       
 
         $body = $pm->listAll();
 
-        $table = new Table($header, $body->toArray(), $route);
+        $table = new Table($header, $body->toArray());
 
         return view('site.produtos', ['table' => $table->getHTML()]);
-    }
-
-    public function cardList() {
-        $products = Product::all();
-
-        return view('site.loja',['products' => $products]);
     }
 
     public function destroy($id) {
