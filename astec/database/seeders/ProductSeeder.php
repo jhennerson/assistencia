@@ -14,7 +14,10 @@ class ProductSeeder extends Seeder
      * @return void
      */
     public function run()
-    {       
-        Product::factory(23)->create();            
+    {   
+        $pdb = new ProductDataBuilder();
+        $v = $pdb->getData();
+        Product::insert($v);
+        Product::factory(23)->create();
     }
 }

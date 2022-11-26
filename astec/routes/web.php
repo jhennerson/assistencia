@@ -24,7 +24,7 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site/home');
 });
 
 Route::get('/home', [HomeController::class, 'goHome']);
