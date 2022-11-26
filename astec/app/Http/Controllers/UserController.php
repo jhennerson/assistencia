@@ -29,6 +29,6 @@ class UserController extends Controller
     public function destroy($id) {
         User::findOrFail($id)->delete();
         
-        return view('site.cadastro')->with('msg', 'Usuário removido com sucesso!');
+        return view('site.usuarios')->with('msg', 'Usuário removido com sucesso!');
     }
 }

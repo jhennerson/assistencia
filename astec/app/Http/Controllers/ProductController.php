@@ -16,7 +16,7 @@ class ProductController extends Controller
     }
 
     public function list() {
-        $header = ['NOME', 'FABRICANTE', 'DESCRIÇÃO'];
+        $header = ['ID', 'NOME', 'FABRICANTE', 'DESCRIÇÃO'];
         $pm = new ProductModel();       
 
         $body = $pm->listAll();
@@ -32,9 +32,13 @@ class ProductController extends Controller
         return view('site.loja',['products' => $products]);
     }
 
+    
+
     public function destroy($id) {
-        Product::findOrFail($id)->delete();
+        $product = Product::findOrFail($id);
         
+        $product->delete();
+
         return view('site.cadastro-produto')->with('msg', 'Produto removido com sucesso!');
     }
 }

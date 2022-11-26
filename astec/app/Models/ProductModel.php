@@ -12,6 +12,7 @@ class ProductModel extends Model
         $data = request();
 
         $result = $data->validate([
+            'id' => 'required|integer|unique',
             'name' => 'required|string|min:1|max:32',
             'manufacturer' => 'required|string|min:1|max:64',
             'description' => 'required|min:1|max:255',
@@ -35,6 +36,6 @@ class ProductModel extends Model
     
     public function listAll() {
         $product = new Product();
-        return $product->select('name', 'manufacturer', 'description')->get();
+        return $product->select('id', 'name', 'manufacturer', 'description')->get();
     }
 }

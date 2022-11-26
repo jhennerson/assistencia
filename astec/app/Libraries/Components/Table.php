@@ -47,18 +47,20 @@ use App\Models\UserModel;
         foreach ($row as $item) {
             $html .= '<td class="align-middle">'.$item.'</td>';
         }
+
         $html .=
             '<td class="align-middle">
-                <a href="{{ }}" class="btn btn-info edit-btn">Editar</a>
+                <a href="/produtos/'.$row['id'].'/update" class="btn btn-info edit-btn">Editar</a>
             </td>
             <td class="align-middle">
-                <form class="delete_form" action="{{ }}" method="POST">
+                <a href="/produtos/'.$row['id'].'/delete" class="delete_form" method="GET">
                     <input type="hidden" name="_token" value="'.csrf_token().'" /> 
                     <input type="hidden" name="_method" value="DELETE" />
                     <button type="submit" class="btn btn-danger delete-btn" name="trash-outline">Remover</button>
-                </form>
+                </a>
             </td>';
-        $html .= '</tr>';        
+        $html .= '</tr>';
+        
         return $html;
     }
  }

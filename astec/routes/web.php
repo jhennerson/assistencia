@@ -41,4 +41,5 @@ Route::any('/cadastro-produto/{id}', [ProductController::class, 'destroy']);
 Route::get('/usuarios', [UserController::class, 'list']);
 Route::get('/produtos', [ProductController::class, 'list']);
 Route::get('/comentarios', [CommentController::class, 'list']);
-//Route::any('/cadastro/{id}', [UserController::class, 'destroy']);
+Route::get('/produtos/{id}/update', [ProductController::class, 'update']);
+Route::get('/produtos/{id}/delete', [ProductController::class, 'destroy']);
