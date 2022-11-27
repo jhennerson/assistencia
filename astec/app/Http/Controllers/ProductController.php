@@ -16,12 +16,12 @@ class ProductController extends Controller
     }
 
     public function list() {
-        $header = ['ID', 'NOME', 'FABRICANTE', 'DESCRIÇÃO'];
+        $header = ['ID', 'NOME', 'FABRICANTE', 'DESCRIÇÃO', 'IMÁGEM'];
         $pm = new ProductModel();       
 
         $body = $pm->listAll();
 
-        $table = new Table($header, $body->toArray());
+        $table = new Table($header, $body->toArray(), 'produtos');
 
         return view('site.produtos', ['table' => $table->getHTML()]);
     }
@@ -32,13 +32,23 @@ class ProductController extends Controller
         return view('site.loja',['products' => $products]);
     }
 
-    
+    public function edit($id) {
+        $product = Product::findOrFail($id);
+
+        return view('site.editar-produto', compact('product'));
+    }
+
+    public function update(Request $request) {
+        Product::findOrFail($request->id)->update($request->all());
+
+        return redirect('produtos')->with('msg', 'Produto editado com sucesso!');
+    }
 
     public function destroy($id) {
         $product = Product::findOrFail($id);
         
         $product->delete();
 
-        return view('site.cadastro-produto')->with('msg', 'Produto removido com sucesso!');
+        return redirect('produtos')->with('msg', 'Produto removido com sucesso!');
     }
 }

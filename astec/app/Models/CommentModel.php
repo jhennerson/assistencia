@@ -12,6 +12,7 @@ class CommentModel extends Model
         $data = request();
 
         $result = $data->validate([
+            //id já vem como padrão
             'author' => 'required|string|min:2|max:50',
             'content' => 'required|min:1|max:255'
         ]);

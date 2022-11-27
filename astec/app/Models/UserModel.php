@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserModel extends Model
 {
+    protected $guarded = [];
+
     public function register() {
         if(sizeof($_POST) == 0) return; 
         
         $data = request();
 
         $result = $data->validate([
+            //id já vem como padrão
             'first_name' => 'required|string|min:2|max:19',
             'last_name' => 'required|string|min:2|max:50',
             'email' => 'required|email',
@@ -25,6 +28,6 @@ class UserModel extends Model
 
     public function listAll() {
         $user = new User();
-        return $user->select('first_name', 'last_name', 'email', 'cpf', 'phone')->get();
+        return $user->select('id', 'first_name', 'last_name', 'email', 'cpf', 'phone')->get();
     }
 }

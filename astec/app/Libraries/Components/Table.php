@@ -10,10 +10,12 @@ use App\Models\UserModel;
  class Table {
     private $header;
     private $body;
+    private $link;
 
-    function __construct(array $header, array $body) {
+    function __construct(array $header, array $body, string $link) {
         $this->header = $header;
         $this->body = $body;
+        $this->link = $link;
     }
 
     public function getHTML() {
@@ -34,15 +36,16 @@ use App\Models\UserModel;
     }
 
     private function tableBody() {
+        $link = $this->link;
         $html = '<tbody>';
         foreach ($this->body as $row) {
-            $html .= $this->tableRow($row);
+            $html .= $this->tableRow($row, $link);
         }
         $html .= '</tbody>';
         return $html;
     }
 
-    private function tableRow($row) {
+    private function tableRow($row, $link) {
         $html = '<tr>';
         foreach ($row as $item) {
             $html .= '<td class="align-middle">'.$item.'</td>';
@@ -50,10 +53,10 @@ use App\Models\UserModel;
 
         $html .=
             '<td class="align-middle">
-                <a href="/produtos/'.$row['id'].'/update" class="btn btn-info edit-btn">Editar</a>
+                <a href="/'.$link.'/'.$row['id'].'/edit" class="btn btn-info edit-btn">Editar</a>
             </td>
             <td class="align-middle">
-                <a href="/produtos/'.$row['id'].'/delete" class="delete_form" method="GET">
+                <a href="/'.$link.'/'.$row['id'].'/delete" class="delete_form" method="GET">
                     <input type="hidden" name="_token" value="'.csrf_token().'" /> 
                     <input type="hidden" name="_method" value="DELETE" />
                     <button type="submit" class="btn btn-danger delete-btn" name="trash-outline">Remover</button>

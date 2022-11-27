@@ -12,23 +12,37 @@ class UserController extends Controller
         $user = new UserModel();
         $user->register();
 
-        return view('site.cadastro');
+        return view('site.cadastro-usuario');
     }
 
     public function list() {
-        $header = ['NOME', 'SOBRENOME', 'EMAIL', 'CPF', 'TELEFONE'];
+        $header = ['ID', 'NOME', 'SOBRENOME', 'EMAIL', 'CPF', 'TELEFONE'];
         $um = new UserModel();
 
         $body = $um->listAll();
 
-        $table = new Table($header, $body->toArray());
+        $table = new Table($header, $body->toArray(), 'usuarios');
 
         return view('site.usuarios', ['table' => $table->getHTML()]);
     }
 
+    public function edit($id) {
+        $user = User::findOrFail($id);
+
+        return view('site.editar-usuario', compact('user'));
+    }
+
+    public function update(Request $request) {
+        User::findOrFail($request->id)->update($request->all()); 
+
+        return redirect('usuarios')->with('msg', 'Usuário editado com sucesso!');
+    }
+
     public function destroy($id) {
-        User::findOrFail($id)->delete();
+        $user = User::findOrFail($id);
         
-        return view('site.usuarios')->with('msg', 'Usuário removido com sucesso!');
+        $user->delete();
+
+        return redirect('usuarios')->with('msg', 'Usuário removido com sucesso!');
     }
 }

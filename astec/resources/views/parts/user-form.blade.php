@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form class="text-center border border-light p-5 bg-white" id="contact-form" name="contact-form" method="POST" action="/cadastro">
+            <form class="text-center border border-light p-5 bg-white" id="contact-form" name="contact-form" method="POST" action="/{{ $link }}">
                 @csrf
-                <p class="h4 mb-4">Cadastrar</p>
+                <p class="h4 mb-4">{{ $title }}</p>
 
-                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') }}" name="email" placeholder="E-mail">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') ?? $email }}" name="email" placeholder="E-mail">
                 @error('email')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
@@ -20,22 +20,22 @@
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') }}" name="first_name" placeholder="Nome">
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') ?? $first_name }}" name="first_name" placeholder="Nome">
                 @error('first_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') }}" name="last_name" placeholder="Sobrenome">   
+                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') ?? $last_name}}" name="last_name" placeholder="Sobrenome">   
                 @error('last_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') }}" name="cpf" placeholder="CPF">
+                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') ?? $cpf }}" name="cpf" placeholder="CPF">
                 @error('cpf')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror                
 
-                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') ?? $phone }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                     @error('phone')
                         <p class='red-text'>{{ $message }}</p>
                     @enderror
@@ -44,7 +44,7 @@
                 </small>
 
                 <div class="text-center text-md-center">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Cadastrar</a>
+                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Salvar</a>
                 </div>
 
                 <hr>

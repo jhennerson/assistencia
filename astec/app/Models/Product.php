@@ -9,7 +9,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
+        //id não precisa já vem como padrão
         'name',
         'manufacturer',
         'description',

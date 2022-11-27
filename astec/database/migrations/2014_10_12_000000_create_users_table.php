@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email')->unique();
-            $table->bigInteger('cpf')->unique();
-            $table->bigInteger('phone')->unique();
+            $table->string('email');
+            $table->bigInteger('cpf');
+            $table->bigInteger('phone');
             //$table->string('password');
             //$table->rememberToken();
             $table->timestamps();
