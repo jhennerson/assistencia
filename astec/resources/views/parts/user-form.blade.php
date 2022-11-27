@@ -5,37 +5,37 @@
                 @csrf
                 <p class="h4 mb-4">{{ $title }}</p>
 
-                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') ?? $email ?? '' }}" name="email" placeholder="E-mail">
+                <input type="email" dusk="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') ?? $email ?? '' }}" name="email" placeholder="E-mail">
                 @error('email')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Senha (mín. 8 caracteres)" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                <input type="password" dusk="password_1" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Senha (mín. 8 caracteres)" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                 @error('password')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Confirmar senha" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                <input type="password" dusk="password_2" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Confirmar senha" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                 @error('password')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') ?? $first_name ?? '' }}" name="first_name" placeholder="Nome">
+                <input type="text" dusk="first_name" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') ?? $first_name ?? '' }}" name="first_name" placeholder="Nome">
                 @error('first_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') ?? $last_name ?? '' }}" name="last_name" placeholder="Sobrenome">   
+                <input type="text" dusk="last_name" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') ?? $last_name ?? '' }}" name="last_name" placeholder="Sobrenome">   
                 @error('last_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') ?? $cpf ?? '' }}" name="cpf" placeholder="CPF">
+                <input type="text" dusk="cpf" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') ?? $cpf ?? '' }}" name="cpf" placeholder="CPF">
                 @error('cpf')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror                
 
-                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') ?? $phone ?? '' }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" dusk="phone" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') ?? $phone ?? '' }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                     @error('phone')
                         <p class='red-text'>{{ $message }}</p>
                     @enderror
@@ -44,7 +44,7 @@
                 </small>
 
                 <div class="text-center text-md-center">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Salvar</a>
+                    <a class="btn btn-primary" dusk="submit" onclick="document.getElementById('contact-form').submit();">Salvar</a>
                 </div>
 
                 <hr>

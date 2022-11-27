@@ -5,7 +5,7 @@ namespace Tests\Browser\Pages;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-class ContatoPage extends Page
+class UsuariosDeletePage extends Page
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class ContatoPage extends Page
      */
     public function url()
     {
-        return '/contato';
+        return '/usuarios';
     }
 
     /**
@@ -25,13 +25,14 @@ class ContatoPage extends Page
      */
     public function assert(Browser $browser)
     {
-        $browser->assertPathIs($this->url('/contato'))
+        $browser->assertPathIs($this->url('/usuarios'))
                 ->pause(1000)
-                ->assertSee('Fale conosco')
+                ->assertSee('jhennerson@mail.com')
+                ->click('@delete1')
                 ->pause(1000)
-                ->click('@entrar')
-                ->assertPathIs('/entrar')
-                ->pause(1000);
+                ->visit('usuarios')
+                ->assertDontSee('jhennerson@mail.com')
+                ->pause(3000);
     }
 
     /**

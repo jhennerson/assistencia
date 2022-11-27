@@ -26,12 +26,12 @@ class EmpresaPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/empresa'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Missão')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@servicos')
                 ->assertPathIs('/servicos')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**

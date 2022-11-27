@@ -13,18 +13,17 @@ use Tests\Browser\Pages\EntrarPage;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class UserPageTest extends DuskTestCase
+class VisitPageTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function testExample()
+    public function testVisitPages()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->visit(new HomePage()) 
+            $browser->visit(new HomePage())
                     ->on(new EmpresaPage())
                     ->on(new ServicosPage())
                     ->on(new LojaPage())

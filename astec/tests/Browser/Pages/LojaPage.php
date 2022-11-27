@@ -26,12 +26,12 @@ class LojaPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/loja'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Multifuncionais')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@clientes')
                 ->assertPathIs('/clientes')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**

@@ -25,12 +25,12 @@ class HomePage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Entrar')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@empresa')
                 ->assertPathIs('/empresa')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**

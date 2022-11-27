@@ -26,12 +26,12 @@ class ClientesPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/clientes'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Nossos')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@contato')
                 ->assertPathIs('/contato')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**

@@ -26,12 +26,12 @@ class ServicosPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/servicos'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Manutenção')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@loja')
                 ->assertPathIs('/loja')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**

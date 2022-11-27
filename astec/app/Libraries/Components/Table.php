@@ -53,10 +53,10 @@ use App\Models\UserModel;
 
         $html .=
             '<td class="align-middle">
-                <a href="/'.$link.'/'.$row['id'].'/edit" class="btn btn-info edit-btn">Editar</a>
+                <a href="/'.$link.'/'.$row['id'].'/edit" dusk="edit'.$row['id'].'" class="btn btn-info edit-btn">Editar</a>
             </td>
             <td class="align-middle">
-                <a href="/'.$link.'/'.$row['id'].'/delete" class="delete_form" method="GET">
+                <a href="/'.$link.'/'.$row['id'].'/delete" dusk="delete'.$row['id'].'" class="delete_form" method="GET">
                     <input type="hidden" name="_token" value="'.csrf_token().'" /> 
                     <input type="hidden" name="_method" value="DELETE" />
                     <button type="submit" class="btn btn-danger delete-btn" name="trash-outline">Remover</button>

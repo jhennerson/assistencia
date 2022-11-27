@@ -26,12 +26,12 @@ class EntrarPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url('/entrar'))
-                ->pause(2000)
+                ->pause(1000)
                 ->assertSee('Registrar')
-                ->pause(2000)
+                ->pause(1000)
                 ->click('@cadastro_usuario')
                 ->assertPathIs('/cadastro-usuario')
-                ->pause(2000);
+                ->pause(1000);
     }
 
     /**
