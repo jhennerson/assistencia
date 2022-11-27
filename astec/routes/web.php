@@ -46,4 +46,4 @@ Route::any('/produtos', [ProductController::class, 'list']);
 Route::any('/produtos/{id}/edit', [ProductController::class, 'edit']);
 Route::any('/produtos/{id}/update', [ProductController::class, 'update']);
 Route::any('/produtos/{id}/delete', [ProductController::class, 'destroy']);
-Route::any('/comentarios', [CommentController::class, 'list']);
+//Route::any('/comentarios', [CommentController::class, 'list']);

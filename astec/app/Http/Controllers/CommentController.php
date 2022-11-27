@@ -14,14 +14,26 @@ class CommentController extends Controller
 
         $body = $pm->listAll();
 
-        $table = new Table($header, $body->toArray());
+        $table = new Table($header, $body->toArray(), 'comentarios');
 
         return view('site.comentarios', ['table' => $table->getHTML()]);
     }
 
+    public function edit($id) {
+        $comment = Comment::findOrFail($id);
+
+        return view('site.editar-comentario', compact('comment'));
+    }
+
+    public function update(Request $request) {
+        Comment::findOrFail($request->id)->update($request->all()); 
+
+        return redirect('comentarios')->with('msg', 'Cometário editado com sucesso!');
+    }
+
     public function destroy($id) {
         Comment::findOrFail($id)->delete();
-        
-        return view('site.comentarios')->with('msg', 'Comentário removido com sucesso!');
+
+        return redirect('comentarios')->with('msg', 'Cometário removido com sucesso!');
     }
 }

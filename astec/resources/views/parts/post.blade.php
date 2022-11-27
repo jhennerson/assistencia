@@ -2,7 +2,7 @@
     <div class="row mt-3">
         <div class="col-lg-5 mb-5">
             <div class="view overlay ">
-                <img src=" {{ asset($image) }}" class="img-fluid rounded-circle" alt="Second sample image">
+                <img src=" {{ asset($logo) }}" class="img-fluid rounded-circle" alt="Second sample image">
                 <a></a>
             </div>
         </div>
