@@ -20,7 +20,7 @@ class VisitPageTest extends DuskTestCase
      *
      * @return void
      */
-    public function testVisitPages()
+    public function testVisitPage()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new HomePage())

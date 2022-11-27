@@ -32,7 +32,7 @@ class UsuariosDeletePage extends Page
                 ->pause(1000)
                 ->visit('usuarios')
                 ->assertDontSee('jhennerson@mail.com')
-                ->pause(3000);
+                ->pause(4000);
     }
 
     /**
