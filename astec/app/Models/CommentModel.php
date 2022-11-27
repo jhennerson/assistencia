@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CommentModel extends Model
 {
+    protected $guarded = [];
+
     public function register() {
         if(sizeof($_POST) == 0) return;
 

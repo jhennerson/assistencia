@@ -28,4 +28,9 @@ class UserDataBuilder {
         }
         return $aux;
     }
+
+    public function getRow() {
+        $v = ['first_name' => 'Name', 'last_name' => 'Last', 'email' => 'e@mail.com', 'cpf' => '10987654321', 'phone' => '11987654321'];
+        return $v;
+    }
 }
