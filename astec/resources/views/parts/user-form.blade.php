@@ -5,7 +5,7 @@
                 @csrf
                 <p class="h4 mb-4">{{ $title }}</p>
 
-                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') ?? $email }}" name="email" placeholder="E-mail">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="{{ old('email') ?? $email ?? '' }}" name="email" placeholder="E-mail">
                 @error('email')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
@@ -20,22 +20,22 @@
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') ?? $first_name }}" name="first_name" placeholder="Nome">
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" value="{{ old('first_name') ?? $first_name ?? '' }}" name="first_name" placeholder="Nome">
                 @error('first_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
                     
-                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') ?? $last_name}}" name="last_name" placeholder="Sobrenome">   
+                <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" value="{{ old('last_name') ?? $last_name ?? '' }}" name="last_name" placeholder="Sobrenome">   
                 @error('last_name')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror
 
-                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') ?? $cpf }}" name="cpf" placeholder="CPF">
+                <input type="text" id="defaultRegisterFormNumber" class="form-control mb-4" value="{{ old('cpf') ?? $cpf ?? '' }}" name="cpf" placeholder="CPF">
                 @error('cpf')
                     <p class='red-text'>{{ $message }}</p>
                 @enderror                
 
-                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') ?? $phone }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <input type="text" id="defaultRegisterPhoneNumber" class="form-control" value="{{ old('phone') ?? $phone ?? '' }}" name="phone" placeholder="Telefone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
                     @error('phone')
                         <p class='red-text'>{{ $message }}</p>
                     @enderror

@@ -16,22 +16,22 @@
                     <a class="nav-link" href="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="empresa">Empresa</a>
+                    <a class="nav-link" dusk="empresa" href="empresa">Empresa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servicos">Serviços</a>
+                    <a class="nav-link" dusk="servicos" href="servicos">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="loja">Loja Virtual</a>
+                    <a class="nav-link" dusk="loja" href="loja">Loja Virtual</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="clientes">Clientes</a>
+                    <a class="nav-link" dusk="clientes" href="clientes">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contato">Contato</a>
+                    <a class="nav-link" dusk="contato" href="contato">Contato</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="entrar">Entrar</a>
+                    <a class="nav-link" dusk="entrar" href="entrar">Entrar</a>
                 </li>
             </ul>
         </div>

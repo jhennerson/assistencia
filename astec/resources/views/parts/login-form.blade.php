@@ -9,10 +9,10 @@
 
                 <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha">
 
-                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
 
                 <p>Não possui cadastro?
-                    <a href="cadastro">Registrar</a>
+                    <a href="cadastro-usuario" dusk="cadastro_usuario">Registrar</a>
                 </p>
 
             </form>

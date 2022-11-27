@@ -4,7 +4,8 @@ namespace Tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
-class HomePage extends Page
+
+class LojaPage extends Page
 {
     /**
      * Get the URL for the page.
@@ -13,23 +14,23 @@ class HomePage extends Page
      */
     public function url()
     {
-        return '/';
+        return '/loja';
     }
 
     /**
      * Assert that the browser is on the page.
      *
-     * @param  \Laravel\Dusk\Browser  $browser
+     * @param  Browser  $browser
      * @return void
      */
     public function assert(Browser $browser)
     {
-        $browser->assertPathIs($this->url('/'))
+        $browser->assertPathIs($this->url('/loja'))
                 ->pause(2000)
-                ->assertSee('Entrar')
+                ->assertSee('Multifuncionais')
                 ->pause(2000)
-                ->click('@empresa')
-                ->assertPathIs('/empresa')
+                ->click('@clientes')
+                ->assertPathIs('/clientes')
                 ->pause(2000);
     }
 
